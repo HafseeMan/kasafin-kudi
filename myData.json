@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+        "BVN": "12345678901",
+        "FirstName": "Uchenna",
+        "LastName": "Okoro",
+        "MiddleName": "Adepoju",
+        "AccountNumber": "0987654321",
+        "BankCode": "011"
+        },
+        {
+        "BVN": "12345678912",
+        "FirstName": "Chidi",
+        "LastName": "Seun",
+        "MiddleName": "Joshua",
+        "AccountNumber": "0987654329",
+        "BankCode": "012"
+        },
+        {
+            "BVN": "232323232323",
+            "FirstName": "Hafsah",
+            "LastName": "a",
+            "MiddleName": "b",
+            "AccountNumber": "1234567890",
+            "BankCode": "123"
+            }
+
+    ]
+    
+    
+}
