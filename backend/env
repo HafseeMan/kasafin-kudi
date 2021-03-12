@@ -1,0 +1,8 @@
+PORT=
+
+H_DSN=
+H_USER=
+H_PASSWORD=
+H_DATABASE=kasafin-kudi
+
+TOKEN_SECRET=randomstringtokenizerkasafinkuditokensecret
