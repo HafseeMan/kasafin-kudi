@@ -11,6 +11,7 @@
 
     <title>kasafin kudi | Expense Tracker</title>
 
+    <script src="./js/auth.js"></script>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -244,28 +245,28 @@
 
                                     <h5 class="text-success bold card-header text-center">NEW ENTRY</h5>
                                     <span class="text-sm text-danger">TODAY: 7th March, 2021</span>
-                                    <form class="user">
+                                    <form class="user expense-form">
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-2 mb-sm-0">
-                                                <input type="text" class="form-control form-control-user" id=""
+                                                <input type="text" class="form-control form-control-user" id="name1"
                                                     placeholder="Enter Name">
                                             </div>
                                             <div class="mb-2 col-sm-6">
-                                                <input type="text" class="form-control form-control-user" id=""
+                                                <input type="text" class="form-control form-control-user" id="category1"
                                                     placeholder="Select Category">
                                             </div>
                                             <div class="col-sm-6 mb-2 mb-sm-0">
-                                                <input type="text" class="form-control form-control-user" id=""
+                                                <input type="text" class="form-control form-control-user" id="quantity1"
                                                     placeholder="Enter Quantity">
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-control form-control-user" id=""
+                                                <input type="text" class="form-control form-control-user" id="cost1"
                                                     placeholder="Enter Amount(N)">
                                             </div>
                                         </div>
-                                        <a href="#" class=" mx-auto btn btn-danger btn-circle btn-lg">
+                                        <button type="submit" href="#" class=" mx-auto btn btn-danger btn-circle btn-lg">
                                             <i class="fas fa-plus"></i>
-                                        </a>
+                                        </button>
                         </div>
                         
                     <!-- DataTales  -->
@@ -294,55 +295,8 @@
                                             <th>Date</th>
                                         </tr>
                                     </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Fuel</td>
-                                            <td>1 litre</td>
-                                            <td>500</td>                                          
-                                            <td>Transport</td>
-                                            <td>2011/04/2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Fuel</td>
-                                            <td>1 litre</td>
-                                            <td>500</td>                                          
-                                            <td>Transport</td>
-                                            <td>2011/04/2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Fuel</td>
-                                            <td>1 litre</td>
-                                            <td>500</td>                                          
-                                            <td>Transport</td>
-                                            <td>2011/04/2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Water</td>
-                                            <td>1 litre</td>
-                                            <td>500</td>                                          
-                                            <td>Logistics</td>
-                                            <td>2012/04/2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Fuel</td>
-                                            <td>1 litre</td>
-                                            <td>500</td>                                          
-                                            <td>Transport</td>
-                                            <td>2011/04/2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Fuel</td>
-                                            <td>1 litre</td>
-                                            <td>500</td>                                          
-                                            <td>Transport</td>
-                                            <td>2011/04/2</td>
-                                        </tr>
+                                    <tbody class="expense-detail">
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -471,7 +425,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-primary logout" >Logout</button>
                 </div>
             </div>
         </div>
@@ -480,6 +434,10 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+    <!-- custom js -->
+<script src="js/server.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
