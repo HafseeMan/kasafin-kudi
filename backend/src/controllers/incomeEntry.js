@@ -1,9 +1,10 @@
 const connection = require('../models/dbase');
 
 exports.newEntry = (req, res) => {
-  const sql = 'INSERT INTO income_tracker_list (name, category, quantity, cost) VALUE (?)';
+  const sql = 'INSERT INTO income_tracker_list (name, category, quantity, cost) VALUES (?,?,?,?)';
   const income_data = req.body;
-  connection.query(sql, [income_data], (err, result) => {
+  const { name, category, quantity, cost } = income_data;
+  connection.query(sql, [name, category, quantity, cost], (err, result) => {
     if (err) {
       return res.status(500).json({
         message: 'Internet Server Error',

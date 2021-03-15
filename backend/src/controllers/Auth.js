@@ -34,7 +34,9 @@ exports.signUp = (req, res) => {
                 err
               });
             } else {
-              return res.status(200).json({ message: `Welcome ${user.firstname}`, result, success: false });
+              return res
+                .status(200)
+                .json({ message: 'Login successful', token: process.env.TOKEN_SECRET, success: true });
             }
           }
         );

@@ -1,50 +1,40 @@
+const express = require('express'); // body parser
+
 // dotenv
-require('dotenv').config();
+require('dotenv').config(); // express
 
-// express
-const express = require('express');
+const { urlencoded, json } = require('body-parser'); // cors
 
-// body parser
-const bodyParser = require('body-parser');
+const cors = require('cors'); // express app
 
-// cors
-const cors = require('cors');
+const app = express(); // parser encoding
 
-// express app
-const app = express();
+app.use(
+  urlencoded({
+    extended: true
+  })
+); // parse app
 
-// parser encoding
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(json(), cors()); // port
 
-// parse app
-app.use(bodyParser.json(), cors());
-
-// port
 const port = process.env.PORT;
-
 app.listen(port, () => {
   console.log('Server running at http://localhost: ' + port + '\nOpen your browser to view');
-});
+}); // ROUTES const
 
-// ROUTES IMPORT
 const AuthRoute = require('./src/routers/authRoute');
 
 const IncomeRoute = require('./src/routers/incomeRoute');
 
-const ExpenseRoute = require('./src/routers/expenseRoute');
-
-// ROUTES USAGE
-
+const ExpenseRoute = require('./src/routers/expenseRoute'); // ROUTES USAGE
 // auth
-app.use('/api/auth', AuthRoute);
 
-// income
-app.use('/api/income', IncomeRoute);
+app.use('/api/auth', AuthRoute); // income
 
-// income
-app.use('/api/expense', ExpenseRoute);
+app.use('/api/income', IncomeRoute); // income
 
-// test api
+app.use('/api/expense', ExpenseRoute); // test api
+
 app.get('/', (req, res) => {
   res.send('we are up and running');
 });
