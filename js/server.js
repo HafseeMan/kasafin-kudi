@@ -150,6 +150,10 @@ const login = (data) => {
     });
 };
 
+const logout = async () => {
+  localStorage.removeItem('Token');
+};
+
 $(document).ready(() => {
   fetchAllIncome();
   fetchAllExpense();
@@ -215,5 +219,9 @@ $(document).ready(() => {
       };
       login(data);
     }
+  });
+
+  $('.logout').click(() => {
+    logout.then((location.href = '/login.html'));
   });
 });
